@@ -11,8 +11,8 @@
 
 /* Fonts */
 :root {
+  --font-body: "Jost", system-ui, sans-serif;
   --font-heading: "JetBrains Mono", monospace;
-  --font-body: "Jost", sans-serif;
 }
 
 /* Spacing */

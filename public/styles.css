@@ -26,7 +26,12 @@ header {
   gap: 0.5rem;
 }
 
+.right-nav button {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
 .links {
+  display: none;
   grid-row: 2 /3;
 }
 .links li {
@@ -37,7 +42,7 @@ header {
 }
 
 .Content ul,
-dl {
+.Content dl {
   padding-left: 2rem;
 }
 .Content dd {
@@ -120,6 +125,9 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+  }
+  .links {
+    display: block;
   }
   .left-nav ul {
     gap: 0.5rem;
