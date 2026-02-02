@@ -2,7 +2,6 @@ import { toHtmlElement } from "./toHtmlElement.mjs";
 
 function createHeader() {
   const headerHtmlString = `
-    <header>
       <div class="left-nav">
         <h1>Agustin Xocua Dimayuga</h1>
         <div class="links">
@@ -21,17 +20,53 @@ function createHeader() {
         </label>
         <button class="button">Menu</button>
       </div>
-    </header>
 `;
+
   const headerHtml = toHtmlElement(headerHtmlString);
+  // Get headere reference
+  const headerReference = document.querySelector("header");
+
+  // Append html string to header
+  headerReference.append(headerHtml);
+
+  // Get button reference
+  const btn = headerReference.querySelector("button");
+
+  const linkReference = headerReference.querySelector(".links");
   const body = document.body;
-  body.prepend(headerHtml);
-  const header = body.querySelector("header");
-  const btn = header.querySelector("button");
-  const links = body.querySelector(".links");
+
+  // addEventListener to button
   btn.addEventListener("click", () => {
-    links.classList.toggle("links");
+    linkReference.classList.toggle("open");
+  });
+
+  body.addEventListener("click", (e) => {
+    if (!headerReference.contains(e.target)) {
+      if (linkReference.classList.contains("open")) {
+        linkReference.classList.remove("open");
+      }
+    }
+  });
+  if (localStorage.getItem("darkMode") === "true") {
+    console.log("added dark mode");
+    body.classList.add("dark-mode");
+    headerReference.querySelector("input").checked = true;
+  }
+}
+
+function darkModeFunctionality() {
+  const headerReference = document.querySelector("header");
+  const checkBox = headerReference.querySelector("input");
+  checkBox.addEventListener("change", () => {
+    if (checkBox.checked) {
+      document.body.classList.add("dark-mode");
+      localStorage.setItem("darkMode", checkBox.checked);
+    } else {
+      localStorage.setItem("darkMode", checkBox.checked);
+      document.body.classList.remove("dark-mode");
+    }
   });
 }
 
 createHeader();
+darkModeFunctionality();

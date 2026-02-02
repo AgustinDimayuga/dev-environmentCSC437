@@ -16,27 +16,35 @@ h3 {
 }
 
 header {
-  display: grid;
-  align-items: center;
+  display: flex;
+  align-items: baseline;
   justify-content: space-between;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto;
   background-color: var(--bg-header);
   padding: var(--padding-small);
-  gap: 0.5rem;
 }
-
+.left-nav ul li {
+  margin-top: 1rem;
+}
+.right-nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
 .right-nav button {
   background-color: var(--bg-main);
   color: var(--text-main);
 }
 .links {
   display: none;
-  grid-row: 2 /3;
+}
+.links.open {
+  display: block;
 }
 .links li {
   list-style-type: none;
 }
+
 .Content {
   padding: var(--padding-small);
 }
@@ -118,16 +126,15 @@ body {
   header {
     display: flex;
     gap: 1rem;
-    align-items: center;
-    align-content: center;
-  }
-  .left-nav {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
   }
   .links {
     display: block;
+  }
+
+  .left-nav {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
   }
   .left-nav ul {
     gap: 0.5rem;
