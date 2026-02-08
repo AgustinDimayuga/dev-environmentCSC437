@@ -7,6 +7,7 @@
   --h2-color: #b57614;
   --h3-color: #076678;
   --hobby-heading: #427b58;
+  --input-error-color: #cc241d;
 }
 
 /* Fonts */
@@ -31,4 +32,5 @@ body.dark-mode {
   --h2-color: #fabd2f;
   --h3-color: #458588;
   --hobby-heading: #83a598;
+  --input-error-color: #ff8a8a;
 }

@@ -1,59 +1,100 @@
 <!doctype html>
 <html>
-  <head>
-    <link href="tokens.css" rel="stylesheet" />
-    <link href="styles.css" rel="stylesheet" />
-    <script type="module" src="header.mjs"></script>
-    <title>Agustin Xocua Dimayuga</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Jost:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <!-- Hello, I'm a comment -->
-    <header></header>
-    <main class="Content">
-      <div class="grid-layout-home">
-        <div class="Portrait">
-          <img
-            src="images/Personal_Portrait.jpg"
-            alt="Agustin Xocua Dimayuga"
-          />
-        </div>
-        <section>
-          <h2>About me</h2>
-          <p>
-            Hello World! I am a second year Computer Science Student at Cal
-            Poly. I enjoy playing video games and have been stuck on the game
-            <i>Dead By Daylight</i>.
-          </p>
-        </section>
-        <section>
-          <h2>Sports I like to Watch</h2>
-          <ul>
-            <li>Soccer</li>
-            <li>Formula 1</li>
-            <li>Football</li>
-          </ul>
-        </section>
+<head>
+  <link href="tokens.css" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" />
+  <script type="module" src="header.mjs"></script>
+  <script type="module" src="form.mjs"></script>
+  <title>Agustin Xocua Dimayuga</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Jost:ital@0;1&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Hello, I'm a comment -->
+  <header></header>
+  <main class="Content">
+    <div class="grid-layout-home">
+      <div class="Portrait">
+        <img src="images/Personal_Portrait.jpg" alt="Agustin Xocua Dimayuga" />
       </div>
-      <h2>Contact Information</h2>
-      <dl class="contact">
-        <dt><b>Email</b></dt>
-        <dd>axocuadi@calpoly.edu</dd>
-        <dt><b>Phone Number</b></dt>
-        <dd>123-456-7891</dd>
-        <dt><b>LinkedIn</b></dt>
-        <dd>
-          <a href="https://www.linkedin.com/in/agustinxocuadimayuga/"
-            >Agustin Dimayuga</a
-          >
-        </dd>
-      </dl>
-    </main>
-  </body>
+      <section>
+        <h2>About me</h2>
+        <p>
+          Hello World! I am a second year Computer Science Student at Cal
+          Poly. I enjoy playing video games and have been stuck on the game
+          <i>Dead By Daylight</i>.
+        </p>
+      </section>
+      <section>
+        <h2>Sports I like to Watch</h2>
+        <ul>
+          <li>Soccer</li>
+          <li>Formula 1</li>
+          <li>Football</li>
+        </ul>
+      </section>
+      <form novalidate>
+        <div class="address">
+          <span class="address-error error"></span>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" autocomplete="email" />
+        </div>
+        <div class="reasons-for-contact">
+          <fieldset>
+            <legend>What best describes yourself?</legend>
+            <span class="checkbox-error error"></span>
+            <div class="contact-reason">
+              <div>
+                <input class="descriptor" id="reason1" type="checkbox" value="Employer" name="descriptor">
+                <label for="reason1">Employer</label>
+              </div>
+
+              <div>
+                <input id="reason2" class="descriptor" type="checkbox" value="Peer" name="descriptor">
+                <label for="reason2">Peer</label>
+              </div>
+
+              <div>
+                <input id="reason3" class="descriptor" type="checkbox" value="Student" name="descriptor">
+                <label for="reason3">Student</label>
+              </div>
+
+              <div>
+                <input id="reason4" type="checkbox" class="descriptor" value="Student" name="descriptor">
+                <label for="reason4">Other</label>
+              </div>
+            </div>
+          </fieldset>
+
+
+        </div>
+        <div>
+          <span class="message-error error"></span>
+          <label for="message">Message</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+      <div class="contact-container">
+        <h2>Contact Information</h2>
+        <dl class="contact">
+          <dt><b>Email</b></dt>
+          <dd>axocuadi@calpoly.edu</dd>
+          <dt><b>Phone Number</b></dt>
+          <dd>123-456-7891</dd>
+          <dt><b>LinkedIn</b></dt>
+          <dd>
+            <a href="https://www.linkedin.com/in/agustinxocuadimayuga/">Agustin Dimayuga</a>
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </main>
+</body>
+
 </html>
